@@ -1,8 +1,7 @@
 # coding: utf-8
 from flask_script import Manager
-from uploader import create_app
+from uploader import app
 
-app = create_app()
 manager = Manager(app)
 
 
