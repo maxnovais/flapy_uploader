@@ -1,0 +1,29 @@
+{% extends "_base.html" %}
+
+{% block title %}Lista de diretórios{% endblock %}
+
+{% block content %}
+    <h3>Quantidade de diretórios: {{total_dir}}</h3>
+
+    <hr>
+
+    {% for dir in dirs %}
+        <p>
+            <a href="{{ url_for('get_dir', dir=dir)}}">{{dir}}</a>
+        <p>
+    {% endfor %}
+
+    <hr>
+
+    <div class="col-xs-6 text-left">
+        {% if offset %}
+            <a class="btn btn-xs btn-primary" href="{{ url_for('home', offset = offset - (limit - offset)) }}">Página Anterior</a>
+        {% endif %}
+    </div>
+
+    <div class="col-xs-6 text-right">
+        {% if limit < total_dir %}
+            <a class="btn btn-xs btn-primary" href="{{ url_for('home', offset = limit) }}">Próxima Página</a>
+        {% endif %}
+    </div>
+{% endblock %}

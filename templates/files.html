@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+
+{% block title %}Lista de Arquivos{% endblock %}
+
+{% block content %}
+    <h3>Quantidade de arquivos: {{total_files}}</h3>
+
+    <hr>
+
+    {% for file in files %}
+        <p>
+            <a href="{{ url_for('get_file', dir=dir, file=file)}}" target="_blank">{{file}}</a>
+        <p>
+    {% endfor %}
+
+{% endblock %}

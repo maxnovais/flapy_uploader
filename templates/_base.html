@@ -7,6 +7,10 @@
 </head>
 <body>
     <div class="well col-xs-8 col-xs-offset-2">
+        <div class="col-xs-12 text-right">
+            <a class="btn btn-xs btn-info" href="{{url_for('upload_file')}}">Novo Arquivo</a>
+            <a class="btn btn-xs btn-info" href="{{url_for('home')}}">Lista de Arquivos</a>
+        </div>
         <h1>{% block title %}{% endblock %}</h1>
         {% block content %}{% endblock content %}
     </div>
